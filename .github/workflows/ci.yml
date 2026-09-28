@@ -65,6 +65,8 @@ jobs:
 
       - name: Generate JUnit report
         if: always()
+        env:
+          JEST_JUNIT_OUTPUT_DIR: ./reports
         run: npm test -- --reporters=default --reporters=jest-junit
 
       - name: Upload test reports
